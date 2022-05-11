@@ -1,0 +1,14 @@
+info face="face" size=57
+common lineHeight=57 scaleW=218 scaleH=116 pages=1
+page id=0 file="fenshu.png"
+chars count=10
+char id=48 x=0 y=0 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=49 x=44 y=0 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=50 x=88 y=0 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=51 x=0 y=59 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=52 x=44 y=59 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=53 x=88 y=59 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=54 x=132 y=0 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=55 x=132 y=59 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=56 x=176 y=0 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15
+char id=57 x=176 y=59 width=42 height=57 xoffset=0 yoffset=0 xadvance=42 page=0 chnl=15

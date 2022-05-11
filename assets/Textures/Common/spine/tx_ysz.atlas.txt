@@ -1,0 +1,34 @@
+
+tx_ysz.png
+size: 1282,109
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+amazing
+  rotate: false
+  xy: 459, 2
+  size: 367, 105
+  orig: 372, 109
+  offset: 2, 2
+  index: -1
+excellence
+  rotate: false
+  xy: 2, 2
+  size: 455, 105
+  orig: 459, 110
+  offset: 2, 2
+  index: -1
+goodjob
+  rotate: false
+  xy: 828, 2
+  size: 250, 105
+  orig: 254, 109
+  offset: 2, 2
+  index: -1
+nice
+  rotate: false
+  xy: 1080, 2
+  size: 200, 105
+  orig: 204, 110
+  offset: 2, 2
+  index: -1

@@ -1,0 +1,29 @@
+{
+  "__type__": "cc.Material",
+  "_name": "Gaussian",
+  "_objFlags": 0,
+  "_native": "",
+  "_effectAsset": {
+    "__uuid__": "7b8a49c4-5346-451f-a98a-176530350559"
+  },
+  "_techniqueIndex": 0,
+  "_techniqueData": {
+    "0": {
+      "props": {
+        "radius": 2,
+        "size": {
+          "__type__": "cc.Vec2",
+          "x": 100,
+          "y": 100
+        }
+      },
+      "defines": {
+        "USE_TEXTURE": true
+      }
+    },
+    "1": {
+      "props": {},
+      "defines": {}
+    }
+  }
+}
