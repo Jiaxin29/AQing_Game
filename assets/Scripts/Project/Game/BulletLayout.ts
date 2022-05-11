@@ -17,15 +17,15 @@ export default class NewClass extends cc.Component {
 
     }
 
-    onAttack(wPos: cc.Vec3, angle: number) {
+    onAttack(wPos: cc.Vec3, dir: cc.Vec3) {
         let bullet = cc.instantiate(this.bullet)
         bullet.parent = this.node
         bullet.position = bullet.parent.convertToNodeSpaceAR(wPos)
         let rb2d = bullet.getComponent(cc.RigidBody)
-        let dir = DegreesToVectors(angle)
+        dir.normalizeSelf()
         let d = dir.mul(1600)
         
-        rb2d.linearVelocity = d
+        rb2d.linearVelocity = cc.v2(d)
         cc.tween(bullet).delay(1).call(()=>{
             bullet.destroy()
         }).start()

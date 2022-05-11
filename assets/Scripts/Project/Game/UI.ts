@@ -42,8 +42,11 @@ export default class UI extends cc.Component {
     }
 
     onRefreshData() {
-        let enemy = this.curretShowNode
-        this.life.getComponent(cc.ProgressBar).progress = enemy.getComponent(Enemy).currentLife / enemy.getComponent(Enemy).life
+        if (!this.curretShowNode) {
+            return
+        }
+
+        this.life.getComponent(cc.ProgressBar).progress = this.curretShowNode.getComponent(Enemy).currentLife / this.curretShowNode.getComponent(Enemy).life
     }
     // update (dt) {}
 }
