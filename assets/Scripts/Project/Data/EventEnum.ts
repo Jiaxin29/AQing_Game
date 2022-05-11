@@ -15,7 +15,8 @@ export enum GameEventEnum {
     // 怪物
     SHOW_ENEMY_DATA = 'show_enemy_data',
     BULLET_COLLIDER_ENEMY = 'bullet_collider_enemy',  // 子弹打中怪物
-
+    ENEMY_USE_SKILL_1 = 'enemy_use_skill_1',  // 使用技能1
+    
     // 玩家
     ATTACK = 'attack',
 }

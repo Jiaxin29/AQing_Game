@@ -1,4 +1,5 @@
-import { VectorsToDegrees } from "../../../Modules/GlobalFunction";
+import { R } from "../../../../gen/R";
+import { DegreesToVectors, VectorsToDegrees } from "../../../Modules/GlobalFunction";
 import { GameEventEnum, GroupEnum } from "../../Data/EventEnum";
 import { GameEvent } from "../../Main/EventDispatcher";
 
@@ -17,6 +18,9 @@ export default class Enemy extends cc.Component {
     public checkAttackCollider: cc.PhysicsCircleCollider = null  // 检测攻击碰撞体
     public characterCollider: cc.PhysicsBoxCollider = null  // 人物碰撞体
 
+    // 使用技能间隔时间
+    public skillIntervalTime: number = 3
+
     // 属性，用于显示
     @property
     public life: number = 20  // 总生命
@@ -24,6 +28,11 @@ export default class Enemy extends cc.Component {
     @property
     public enemyName: string = 'Amber'
     
+    @property(cc.Prefab)
+    public xiezi: cc.Prefab = null  // 楔子
+
+    @property(cc.Prefab)
+    public xingti: cc.Prefab = null  // 形体
 
     onLoad () {
         this.hand = this.node.getChildByName('hand')
@@ -34,7 +43,6 @@ export default class Enemy extends cc.Component {
 
     start () {
         this.currentLife = this.life
-        GameEvent.emit(GameEventEnum.SHOW_ENEMY_DATA, this.node)
     }
     
     onBeginContact(contact, selfCollider, otherCollider) {
@@ -53,10 +61,6 @@ export default class Enemy extends cc.Component {
     // }
 
     moveToAim(dt) {
-        if (!this.aim) {
-            return
-        }
-
         let wPos = this.aim.parent.convertToWorldSpaceAR(this.aim.position)
         let meWPos = this.node.parent.convertToWorldSpaceAR(this.node.position)
         let dir = wPos.sub(meWPos)
@@ -69,7 +73,79 @@ export default class Enemy extends cc.Component {
         this.node.scaleX = this.velocity.x >= 0 ? 1 : -1
     }
 
+    // 使用技能
+    useSkill(dt) {
+        if (Math.random() > 0.6) {
+            this.useSkill1()
+        } else {
+            this.useSkill2()
+        }
+    }
+
+    // 技能1
+    useSkill1() {
+        console.log('useSkill1')
+        let aim = this.aim.parent.convertToWorldSpaceAR(this.aim.position).sub(this.node.parent.convertToWorldSpaceAR(this.node.position))
+        aim.normalizeSelf()
+        
+        aim.mulSelf(500)
+        aim.addSelf(this.node.position)
+        let xiezi = cc.instantiate(this.xiezi)
+        xiezi.parent = this.node.parent 
+        xiezi.position = this.node.position
+        
+        cc.tween(xiezi).to(0.3, {position: aim}).start()
+
+        this.moveSpeed = 10
+        cc.tween(this.node).delay(1).to(0.02, {position: aim}).call(()=>{
+            xiezi.destroy()
+            this.moveSpeed = 100
+        }).start()
+    }
+
+    // 技能2
+    useSkill2() {
+        console.log('useSkill2')
+        let temp = []
+        
+        for (let i = 0; i < 6; i++) {
+            let dir = DegreesToVectors(i / 6 * 360)
+            dir.mulSelf(400)
+
+            let aimPos = this.node.position.add(cc.v3(dir))
+            let xingti = cc.instantiate(this.xingti)
+
+            xingti.position = this.node.position
+            xingti.parent = this.node.parent
+            xingti.scaleX = this.node.scaleX
+            temp.push(xingti)
+            cc.tween(xingti).to(0.12, {position: aimPos}).start()
+        }
+
+        this.moveSpeed = 0
+        this.scheduleOnce(()=>{
+            for (let n of temp) {
+                n.destroy()
+            }
+            this.moveSpeed = 100
+        }, 1)
+    }
+
+    checkAttackType(dt) {
+        if (!this.aim) {
+            return
+        }
+
+        this.skillIntervalTime -= dt
+        if (this.skillIntervalTime <= 0) {
+            this.useSkill(dt)
+            this.skillIntervalTime = 3
+        } else {
+            this.moveToAim(dt)
+        }
+    }
+
     update (dt) {
-        this.moveToAim(dt)
+        this.checkAttackType(dt)
     }  
 }
