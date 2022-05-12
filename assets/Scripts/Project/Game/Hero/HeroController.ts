@@ -1,7 +1,7 @@
 import { VectorsToDegrees } from "../../../Modules/GlobalFunction";
 import { GameEventEnum, GroupEnum } from "../../Data/EventEnum";
 import { GameEvent } from "../../Main/EventDispatcher";
-import Enemy from "../Enemy/Enemy";
+import EnemyBaseNode from "../Enemy/EnemyBaseNode";
 import HeroInput from "./HeroInput";
 
 const {ccclass, property} = cc._decorator;
@@ -15,15 +15,20 @@ export default class HeroController extends cc.Component {
     public isAttacking: boolean = false
     public heroInput: HeroInput = null
     public aim: cc.Node = null  // 攻击目标
-    
+    public lifeProgress: cc.ProgressBar = null
+
     // 碰撞体
     public checkAttackCollider: cc.PhysicsCircleCollider = null  // 检测攻击碰撞体
     public characterCollider: cc.PhysicsBoxCollider = null  // 人物碰撞体
+
+    public currentLife: number = 10
+    public totalLife: number = 10
 
     onLoad () {
         this.heroInput = this.node.getComponent(HeroInput)
         this.hand = this.node.getChildByName('hand')
         this.rigidbody = this.node.getComponent(cc.RigidBody)
+        this.lifeProgress = this.node.getChildByName('life').getComponent(cc.ProgressBar)
 
         this.checkAttackCollider = this.node.getComponent(cc.PhysicsCircleCollider)
         this.characterCollider = this.node.getComponent(cc.PhysicsBoxCollider)
@@ -39,7 +44,6 @@ export default class HeroController extends cc.Component {
             return
         }
 
-        let pos = 
         this.isAttacking = true
 
         let dir = this.velocity.x > 0 ? cc.v3(1, 0) : cc.v3(-1, 0)
@@ -48,7 +52,7 @@ export default class HeroController extends cc.Component {
             dir = aimWPos.sub(this.node.parent.convertToWorldSpaceAR(this.node.position)).normalize()
         }
 
-        GameEvent.emit(GameEventEnum.ATTACK, this.node.parent.convertToWorldSpaceAR(this.node.position), dir)
+        GameEvent.emit(GameEventEnum.ATTACK_TO_ENEMY, this.node.parent.convertToWorldSpaceAR(this.node.position), dir)
         this.velocity = cc.v2(0, 0)
         cc.tween(this.hand).by(0.1, {angle: 30}).by(0.1, {angle: -30}).call(()=>{
             this.isAttacking = false
@@ -72,6 +76,13 @@ export default class HeroController extends cc.Component {
         }
     }
 
+    // 掉血
+    hurt() {
+        console.log('[HeroController] hurt..')
+        this.currentLife--
+        this.lifeProgress.progress = this.currentLife / this.totalLife
+    }
+
     update (dt) {
         this.checkMove(dt)
     }
@@ -81,7 +92,7 @@ export default class HeroController extends cc.Component {
             return
         }
 
-        if (selfCollider == this.checkAttackCollider && otherCollider == otherCollider.getComponent(Enemy).characterCollider) {
+        if (selfCollider == this.checkAttackCollider && otherCollider == otherCollider.getComponent(EnemyBaseNode).characterCollider) {
             this.aim = otherCollider.node
         }
     }
@@ -91,7 +102,7 @@ export default class HeroController extends cc.Component {
             return
         }
 
-        if (selfCollider == this.checkAttackCollider && otherCollider == otherCollider.getComponent(Enemy).characterCollider) {
+        if (selfCollider == this.checkAttackCollider && otherCollider == otherCollider.getComponent(EnemyBaseNode).characterCollider) {
             this.aim = null
         }
     }

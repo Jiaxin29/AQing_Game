@@ -10,7 +10,7 @@ export default class NewClass extends cc.Component {
     public bullet: cc.Prefab = null
 
     onLoad () {
-        GameEvent.on(GameEventEnum.ATTACK, this.onAttack, this)
+        GameEvent.on(GameEventEnum.ATTACK_TO_ENEMY, this.onAttack, this)
 	}
 
     start () {

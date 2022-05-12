@@ -1,6 +1,6 @@
 import { GameEventEnum } from "../Data/EventEnum";
 import { GameEvent } from "../Main/EventDispatcher";
-import Enemy from "./Enemy/Enemy";
+import Character from "./Basics/Character";
 
 const {ccclass, property} = cc._decorator;
 
@@ -17,7 +17,7 @@ export default class UI extends cc.Component {
         this.bossLife = this.node.getChildByName('boss').getChildByName('bossLife')
 
         GameEvent.on(GameEventEnum.SHOW_ENEMY_DATA, this.onShowBossData, this)
-        GameEvent.on(GameEventEnum.BULLET_COLLIDER_ENEMY, this.onRefreshEnemyData, this)
+        GameEvent.on(GameEventEnum.ATTACK_TO_ENEMY_SUCCESS, this.onRefreshEnemyData, this)
 	}
 
     start () {
@@ -35,9 +35,9 @@ export default class UI extends cc.Component {
 
         this.curretShowNode = enemy
         this.bossName.active = true
-        this.bossName.getComponent(cc.Label).string = enemy.getComponent(Enemy).enemyName
+        this.bossName.getComponent(cc.Label).string = enemy.getComponent(Character).characterName
         this.bossLife.active = true
-        this.bossLife.getComponent(cc.ProgressBar).progress = enemy.getComponent(Enemy).currentLife / enemy.getComponent(Enemy).life
+        this.bossLife.getComponent(cc.ProgressBar).progress = enemy.getComponent(Character).currentLife / enemy.getComponent(Character).life
 
         this.node.children.forEach(node => {
             node.opacity = 0
@@ -50,7 +50,7 @@ export default class UI extends cc.Component {
             return
         }
 
-        this.bossLife.getComponent(cc.ProgressBar).progress = this.curretShowNode.getComponent(Enemy).currentLife / this.curretShowNode.getComponent(Enemy).life
+        this.bossLife.getComponent(cc.ProgressBar).progress = this.curretShowNode.getComponent(Character).currentLife / this.curretShowNode.getComponent(Character).life
     }
     // update (dt) {}
 }

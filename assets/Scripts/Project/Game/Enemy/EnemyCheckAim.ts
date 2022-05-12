@@ -1,8 +1,7 @@
 import { GameEventEnum, GroupEnum } from "../../Data/EventEnum";
 import { GameEvent } from "../../Main/EventDispatcher";
-import InstallUI from "../../UI/InstallUI";
 import HeroController from "../Hero/HeroController";
-import Enemy from "./Enemy";
+import EnemyBaseNode from "./EnemyBaseNode";
 
 const {ccclass, property, executeInEditMode, requireComponent} = cc._decorator;
 
@@ -24,8 +23,8 @@ export default class EnemyCheckAim extends cc.Component {
         }
 
         // 检测玩家附近
-        if (selfCollider == this.node.getComponent(Enemy).checkAttackCollider && otherCollider == otherCollider.getComponent(HeroController).characterCollider) {
-            this.node.getComponent(Enemy).aim = otherCollider.node
+        if (selfCollider == this.node.getComponent(EnemyBaseNode).checkAttackCollider && otherCollider == otherCollider.getComponent(HeroController).characterCollider) {
+            this.node.getComponent(EnemyBaseNode).aim = otherCollider.node
             GameEvent.emit(GameEventEnum.SHOW_ENEMY_DATA, this.node)
         }
     }

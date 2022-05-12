@@ -15,7 +15,7 @@ export default class PhysicsManager extends cc.Component {
     onLoad () {
         let manager = cc.director.getPhysicsManager()
         manager.enabled = true
-        manager.debugDrawFlags = this.debug ? 4 : 0
+        manager.debugDrawFlags = this.debug ? 1 : 0
         manager.gravity = cc.v2(0, 0)
 
         CoreDispatcher.Me.AddListener(CoreMsgBase.UpdateScreen_Landscape, this.fixPhysics, this)

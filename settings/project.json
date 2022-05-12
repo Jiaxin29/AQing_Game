@@ -19,6 +19,8 @@
       false,
       true,
       false,
+      true,
+      null,
       true
     ],
     [
@@ -35,6 +37,15 @@
       false,
       false,
       true,
+      false
+    ],
+    [
+      false,
+      false,
+      false,
+      true,
+      false,
+      false,
       false
     ]
   ],
@@ -68,7 +79,8 @@
     "river",
     "hero",
     "enemy",
-    "hero_bullet"
+    "hero_bullet",
+    "enemy_bullet"
   ],
   "design-resolution-width": 1280,
   "design-resolution-height": 720,

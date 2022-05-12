@@ -610,7 +610,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "EnemyAmber",
+    "_name": "Enemy_AQing",
     "_objFlags": 0,
     "_parent": {
       "__id__": 13
@@ -957,24 +957,6 @@
     "_id": "a50y/47ylLBIBDTcnFL/r/"
   },
   {
-    "__type__": "0ef6bjul/VGh6lF414rjAwD",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 14
-    },
-    "_enabled": true,
-    "life": 20,
-    "enemyName": "Amber",
-    "xiezi": {
-      "__uuid__": "47757228-9fd0-4539-8ef2-15edeea207a6"
-    },
-    "xingti": {
-      "__uuid__": "e9edf049-7797-4d79-a92a-f4a17a6303b0"
-    },
-    "_id": "f4OM3ppb9FkqxAun4oPAqj"
-  },
-  {
     "__type__": "40fc9rAl35EoqisGXJU3LOb",
     "_name": "",
     "_objFlags": 0,
@@ -1005,6 +987,22 @@
     },
     "_radius": 407,
     "_id": "9eChbo781PVK+1TndppPpY"
+  },
+  {
+    "__type__": "4e4c2INpHdBjbJ/spy3TQgI",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 14
+    },
+    "_enabled": true,
+    "skill_E": {
+      "__uuid__": "47757228-9fd0-4539-8ef2-15edeea207a6"
+    },
+    "skill_Q": {
+      "__uuid__": "e9edf049-7797-4d79-a92a-f4a17a6303b0"
+    },
+    "_id": "edZsKBSoNPprLicmX4Y0hz"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1113,7 +1111,7 @@
     "canvas": {
       "__id__": 2
     },
-    "debug": true,
+    "debug": false,
     "_id": "85M0C9RflK+5FRAiVuCKIk"
   },
   {
@@ -1510,12 +1508,12 @@
       "__id__": 35
     },
     "_enabled": true,
-    "_N$totalLength": 600,
+    "_N$totalLength": 140,
     "_N$barSprite": {
       "__id__": 37
     },
     "_N$mode": 0,
-    "_N$progress": 0.5,
+    "_N$progress": 1,
     "_N$reverse": false,
     "_id": "fdhioE1CpD6aCvEEknpsdy"
   },
@@ -1709,7 +1707,7 @@
       "__id__": 46
     },
     "_enabled": true,
-    "_cullingMask": -62,
+    "_cullingMask": -126,
     "_clearFlags": 6,
     "_backgroundColor": {
       "__type__": "cc.Color",
