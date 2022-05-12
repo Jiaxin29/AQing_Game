@@ -75,13 +75,13 @@ export default class Skill_AQing_Q extends Skill_Base {
             item.active = false 
         }, 0.05)
 
-        this.showEffect()
+        this.showEffect(item)
     }
 
-    showEffect() {
+    showEffect(item: cc.Node) {
         let effect = cc.instantiate(this.effect)
-        effect.parent = this.node.parent
-        effect.position = this.node.position
+        effect.parent = item.parent
+        effect.position = item.position
 
         cc.tween(effect).delay(1).call(()=>{
             effect.destroy()
