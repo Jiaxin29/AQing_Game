@@ -1,6 +1,5 @@
-import EnemyBaseNode from "../Enemy/EnemyBaseNode";
-import HeroController from "../Hero/HeroController";
-import { Skill_Base } from "./Skill_Base";
+import EnemyBaseNode from "../../Enemy/EnemyBaseNode";
+import { Skill_Base } from "../../Skill/Skill_Base";
 
 
 const {ccclass, property} = cc._decorator;

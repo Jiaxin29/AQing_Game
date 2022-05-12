@@ -2,8 +2,6 @@ import { DegreesToVectors, VectorsToDegrees } from "../../../Modules/GlobalFunct
 import { GameEventEnum, GroupEnum } from "../../Data/EventEnum";
 import { GameEvent } from "../../Main/EventDispatcher";
 import Character from "../Basics/Character"
-import Skill_AQing_E from "../Skill/Skill_AQing_E";
-import { Skill_Base } from "../Skill/Skill_Base";
 
 const {ccclass, property} = cc._decorator;
 

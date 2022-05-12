@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Enemy_AQing",
+    "_name": "Enemy_Amber",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -172,7 +172,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "2563855c-ab17-4052-85c1-8f607510500e"
+      "__uuid__": "92b8d6c1-5e66-4112-8473-d064c3a43dd5"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -194,9 +194,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "dd830775-1bc2-4198-9d56-864923ef45e2"
+      "__uuid__": "44a11bc9-dc94-495b-b2d3-20bbe4fe3f85"
     },
-    "fileId": "c0yqiGiE1A+oeY2RX6BJwp",
+    "fileId": "e6EKWhxUpBWrSO8TtPEzqA",
     "sync": false
   },
   {
@@ -301,9 +301,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "dd830775-1bc2-4198-9d56-864923ef45e2"
+      "__uuid__": "44a11bc9-dc94-495b-b2d3-20bbe4fe3f85"
     },
-    "fileId": "c7EhmqFVJD+aIXyAMijFlE",
+    "fileId": "4bccJRIxNGdKKMGoMonCkw",
     "sync": false
   },
   {
@@ -390,7 +390,7 @@
     "_id": ""
   },
   {
-    "__type__": "4e4c2INpHdBjbJ/spy3TQgI",
+    "__type__": "24ef8/JIiJIbZn3EMXp+5MA",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -398,13 +398,13 @@
     },
     "_enabled": true,
     "skill_E": {
-      "__uuid__": "47757228-9fd0-4539-8ef2-15edeea207a6"
+      "__uuid__": "b95acdff-1aeb-4fa2-848c-38f95c3e8a48"
     },
     "skill_Q": {
-      "__uuid__": "e9edf049-7797-4d79-a92a-f4a17a6303b0"
+      "__uuid__": "9701d544-bfa9-472a-a4d1-93b1a4b9834e"
     },
     "bullet": {
-      "__uuid__": "d4697318-699c-4446-9245-d3984ee9deaf"
+      "__uuid__": "ba749918-65e0-4026-9abf-8fd22c50c100"
     },
     "_id": ""
   },
@@ -414,9 +414,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "dd830775-1bc2-4198-9d56-864923ef45e2"
+      "__uuid__": "44a11bc9-dc94-495b-b2d3-20bbe4fe3f85"
     },
-    "fileId": "9dlXpK33VI34Nm85ZUkL4c",
+    "fileId": "19uI5qHVhKw4H1NPI1WKdd",
     "sync": false
   }
 ]

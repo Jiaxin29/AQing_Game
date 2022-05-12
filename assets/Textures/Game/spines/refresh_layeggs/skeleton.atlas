@@ -1,0 +1,132 @@
+
+skeleton.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+clsx/clsx_00
+  rotate: false
+  xy: 2, 765
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_02
+  rotate: false
+  xy: 2, 508
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_04
+  rotate: false
+  xy: 251, 765
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_06
+  rotate: false
+  xy: 2, 251
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_08
+  rotate: false
+  xy: 251, 508
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_10
+  rotate: false
+  xy: 500, 765
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_12
+  rotate: false
+  xy: 251, 251
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_14
+  rotate: true
+  xy: 2, 2
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_16
+  rotate: false
+  xy: 500, 508
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_18
+  rotate: false
+  xy: 749, 765
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_20
+  rotate: false
+  xy: 500, 251
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_22
+  rotate: true
+  xy: 259, 2
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_24
+  rotate: false
+  xy: 749, 508
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_26
+  rotate: false
+  xy: 998, 765
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_28
+  rotate: false
+  xy: 749, 251
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_30
+  rotate: true
+  xy: 516, 2
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_32
+  rotate: false
+  xy: 998, 508
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1
+clsx/clsx_34
+  rotate: false
+  xy: 1247, 765
+  size: 247, 255
+  orig: 247, 255
+  offset: 0, 0
+  index: -1

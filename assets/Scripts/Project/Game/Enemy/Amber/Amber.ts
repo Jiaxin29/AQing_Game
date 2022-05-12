@@ -1,8 +1,7 @@
-import { DegreesToVectors } from "../../../Modules/GlobalFunction";
-import { GameEventEnum } from "../../Data/EventEnum";
-import { GameEvent } from "../../Main/EventDispatcher";
-import { Skill_Base } from "../Skill/Skill_Base";
-import EnemyBaseNode from "./EnemyBaseNode";
+import { GameEventEnum } from "../../../Data/EventEnum";
+import { GameEvent } from "../../../Main/EventDispatcher";
+import { Skill_Base } from "../../Skill/Skill_Base";
+import EnemyBaseNode from "../EnemyBaseNode";
 
 const {ccclass, property} = cc._decorator;
 
@@ -22,7 +21,7 @@ export default class AQing extends EnemyBaseNode {
 
     onLoad () {
         super.onLoad()
-        this.characterName = 'AQing'
+        this.characterName = 'Amber'
         this.life = 20
         this.maxMoveSpeed = 300
 	}

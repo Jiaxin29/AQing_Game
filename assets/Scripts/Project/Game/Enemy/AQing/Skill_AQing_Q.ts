@@ -1,7 +1,5 @@
-import { DegreesToVectors } from "../../../Modules/GlobalFunction";
-import EnemyBaseNode from "../Enemy/EnemyBaseNode";
-import HeroController from "../Hero/HeroController";
-import { Skill_Base } from "./Skill_Base";
+import { DegreesToVectors } from "../../../../Modules/GlobalFunction";
+import { Skill_Base } from "../../Skill/Skill_Base";
 
 
 const {ccclass, property} = cc._decorator;
@@ -57,16 +55,13 @@ export default class Skill_AQing_Q extends Skill_Base {
                             .to(0.15, {position: startPos})
                             .delay(0.2)
                             .call(()=>{
-                                for (let n of temp) {
-                                    n.destroy()
-                                }
-
                                 if (endFun) {
                                     endFun()
                                 }
                             })
                             .start()
 
+            this.removeDelayTime(0.1 + 0.15 * 5 + 0.12 * 2 + 0.2, temp)
         }, 0.12)
     }
 
@@ -80,13 +75,18 @@ export default class Skill_AQing_Q extends Skill_Base {
             item.active = false 
         }, 0.05)
 
+        this.showEffect()
+    }
+
+    showEffect() {
         let effect = cc.instantiate(this.effect)
-        effect.parent = item.parent
-        effect.position = item.position
-        
+        effect.parent = this.node.parent
+        effect.position = this.node.position
+
         cc.tween(effect).delay(1).call(()=>{
             effect.destroy()
         }).start()
     }
+
     // update (dt) {}
 }

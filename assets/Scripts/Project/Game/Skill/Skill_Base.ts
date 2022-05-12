@@ -25,5 +25,20 @@ export abstract class Skill_Base extends cc.Component {
         }
     }
 
+    removeDelayTime(time: number, node: cc.Node | cc.Node[]) {
+        let t = []
+        if (node instanceof cc.Node) {
+            t = [node]
+        } else {
+            t = node
+        }
+
+        this.scheduleOnce(()=>{
+            for (let n of t) {
+                n.destroy()
+            }
+        }, time)
+    }
+    
     // update (dt) {}
 }

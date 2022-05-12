@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Bullet",
+    "_name": "Skill_AQing_E",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -27,10 +27,13 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 5
       }
     ],
     "_prefab": {
-      "__id__": 5
+      "__id__": 6
     },
     "_opacity": 255,
     "_color": {
@@ -42,8 +45,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 80,
-      "height": 56
+      "width": 68,
+      "height": 92
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -95,7 +98,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "b6a96957-c834-4faf-afbe-7b5560bb620a"
+      "__uuid__": "14a055a4-daad-48f7-859b-5dc1a3ada3e7"
     },
     "_type": 0,
     "_sizeMode": 1,
@@ -157,8 +160,21 @@
     },
     "_size": {
       "__type__": "cc.Size",
-      "width": 82.4,
-      "height": 59.7
+      "width": 109.1,
+      "height": 129
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cf03bQka+pMwIImBpPRxWA2",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "effect": {
+      "__uuid__": "b29236e6-e815-43ce-ae7a-c0fec8ac012e"
     },
     "_id": ""
   },
@@ -168,9 +184,9 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "d4697318-699c-4446-9245-d3984ee9deaf"
+      "__uuid__": "47757228-9fd0-4539-8ef2-15edeea207a6"
     },
-    "fileId": "4aJWdy6jJD6rvKJrdXKpyD",
+    "fileId": "9cZgN6/YhNzbCE/v5628zs",
     "sync": false
   }
 ]

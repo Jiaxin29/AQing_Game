@@ -20,6 +20,7 @@ export default class UI extends cc.Component {
 
         GameEvent.on(GameEventEnum.SHOW_ENEMY_DATA, this.onShowBossData, this)
         GameEvent.on(GameEventEnum.ATTACK_TO_ENEMY_SUCCESS, this.onRefreshEnemyData, this)
+        GameEvent.on(GameEventEnum.REFRESH_ENEMY, this.onRefreshEnemy, this)
 	}
 
     start () {
@@ -53,6 +54,12 @@ export default class UI extends cc.Component {
         }
 
         this.bossLife.getComponent(cc.ProgressBar).progress = this.curretShowNode.getComponent(Character).currentLife / this.curretShowNode.getComponent(Character).life
+    }
+
+    onRefreshEnemy(enemy: cc.Node) {
+        this.curretShowNode = enemy
+        this.bossName.getComponent(cc.Label).string = enemy.getComponent(Character).characterName
+        this.bossLife.getComponent(cc.ProgressBar).progress = enemy.getComponent(Character).currentLife / enemy.getComponent(Character).life
     }
     // update (dt) {}
 }
