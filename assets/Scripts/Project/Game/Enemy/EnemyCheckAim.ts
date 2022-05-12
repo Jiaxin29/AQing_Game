@@ -25,6 +25,7 @@ export default class EnemyCheckAim extends cc.Component {
         // 检测玩家附近
         if (selfCollider == this.node.getComponent(EnemyBaseNode).checkAttackCollider && otherCollider == otherCollider.getComponent(HeroController).characterCollider) {
             this.node.getComponent(EnemyBaseNode).aim = otherCollider.node
+            this.node.getComponent(EnemyBaseNode).startMove()
             GameEvent.emit(GameEventEnum.SHOW_ENEMY_DATA, this.node)
         }
     }

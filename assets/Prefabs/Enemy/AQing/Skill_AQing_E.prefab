@@ -173,6 +173,9 @@
       "__id__": 1
     },
     "_enabled": true,
+    "effect": {
+      "__uuid__": "b29236e6-e815-43ce-ae7a-c0fec8ac012e"
+    },
     "_id": ""
   },
   {

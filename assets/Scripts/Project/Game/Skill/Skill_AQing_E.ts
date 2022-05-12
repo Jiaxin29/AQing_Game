@@ -9,6 +9,9 @@ const {ccclass, property} = cc._decorator;
 export default class Skill_AQing_E extends Skill_Base {
     public collider: cc.PhysicsCollider = null
 
+    @property(cc.Prefab)
+    public effect: cc.Prefab = null
+
     onLoad () {
         this.collider = this.node.getComponent(cc.PhysicsCollider)
 	}
@@ -30,8 +33,19 @@ export default class Skill_AQing_E extends Skill_Base {
         cc.tween(enemy).delay(1).to(0.02, {position: aim}).call(()=>{
             this.collider.enabled = true
         }).delay(0.1).call(()=>{
+            this.showEffect()
             enemy.getComponent(EnemyBaseNode).useSkill_E_End()
             this.node.destroy()
+        }).start()
+    }
+
+    showEffect() {
+        let effect = cc.instantiate(this.effect)
+        effect.parent = this.node.parent
+        effect.position = this.node.position
+
+        cc.tween(effect).delay(1).call(()=>{
+            effect.destroy()
         }).start()
     }
     // update (dt) {}

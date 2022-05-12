@@ -52,7 +52,6 @@ export default class EnemyBaseNode extends Character {
         this.velocity.x = dir.x
         this.velocity.y = dir.y
 
-        this.moveSpeed = this.maxMoveSpeed
         this.rigidbody.linearVelocity = this.velocity.mul(this.moveSpeed)
         // this.node.angle = VectorsToDegrees(this.velocity)
         this.node.scaleX = this.velocity.x >= 0 ? 1 : -1
@@ -62,6 +61,10 @@ export default class EnemyBaseNode extends Character {
     stopMove() {
         this.moveSpeed = 0
         this.rigidbody.linearVelocity = cc.Vec2.ZERO
+    }
+
+    startMove() {
+        this.moveSpeed = this.maxMoveSpeed
     }
 
     // 检测状态
@@ -76,7 +79,7 @@ export default class EnemyBaseNode extends Character {
             this.skillIntervalTime = 99
         } else {
             let len = this.aim.parent.convertToWorldSpaceAR(this.aim.position).sub(this.node.parent.convertToWorldSpaceAR(this.node.position)).len()
-            if (len <= this.attackLength) {
+            if (this.isCanAttack && len <= this.attackLength) {
                 this.attackAim(dt)
             } else {
                 this.moveToAim(dt)
@@ -96,6 +99,9 @@ export default class EnemyBaseNode extends Character {
     // 使用技能
     useSkill(dt) {
         this.isCanAttack = false
+        this.useSkill_E()
+        return
+        
         if (Math.random() > 0.3) {
             this.useSkill_E()
         } else {

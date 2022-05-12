@@ -30,9 +30,7 @@ export default class AQing extends EnemyBaseNode {
 
     // 攻击
     attackAim(dt) {
-        if (!this.isCanAttack) {
-            return
-        }
+        console.log('[AQing] attackAim')
 
         this.isCanAttack = false
         this.stopMove()
@@ -44,8 +42,9 @@ export default class AQing extends EnemyBaseNode {
 
         GameEvent.emit(GameEventEnum.ATTACK_TO_HERO, this.node, this.aim, this.bullet)
         this.velocity = cc.v2(0, 0)
-        cc.tween(this.hand).to(0.2, {angle: -137 + 30}).to(0.2, {angle: -137 + -30}).delay(0.15).call(()=>{
+        cc.tween(this.hand).to(0.12, {angle: -137 + 30}).to(0.12, {angle: -137 + -30}).delay(0.2).call(()=>{
             this.isCanAttack = true
+            this.startMove()
         }).start()
     }
     
