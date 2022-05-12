@@ -1,0 +1,90 @@
+
+skeleton.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bao_04
+  rotate: false
+  xy: 205, 19
+  size: 46, 52
+  orig: 105, 105
+  offset: 25, 33
+  index: -1
+bao_06
+  rotate: false
+  xy: 727, 75
+  size: 84, 66
+  orig: 105, 105
+  offset: 11, 29
+  index: -1
+bao_08
+  rotate: false
+  xy: 278, 65
+  size: 96, 95
+  orig: 105, 105
+  offset: 6, 6
+  index: -1
+bao_10
+  rotate: false
+  xy: 727, 143
+  size: 101, 102
+  orig: 105, 105
+  offset: 3, 1
+  index: -1
+bao_12
+  rotate: false
+  xy: 830, 144
+  size: 102, 101
+  orig: 105, 105
+  offset: 3, 1
+  index: -1
+guangdian_00
+  rotate: false
+  xy: 550, 70
+  size: 175, 175
+  orig: 179, 179
+  offset: 2, 2
+  index: -1
+shandian_00
+  rotate: false
+  xy: 376, 70
+  size: 90, 90
+  orig: 90, 280
+  offset: 0, 0
+  index: -1
+shandian_01
+  rotate: true
+  xy: 2, 160
+  size: 85, 274
+  orig: 90, 280
+  offset: 4, 0
+  index: -1
+shandian_02
+  rotate: false
+  xy: 934, 115
+  size: 47, 130
+  orig: 90, 280
+  offset: 20, 133
+  index: -1
+shandian_03
+  rotate: true
+  xy: 2, 73
+  size: 85, 274
+  orig: 90, 280
+  offset: 3, 0
+  index: -1
+shandian_04
+  rotate: true
+  xy: 278, 162
+  size: 83, 270
+  orig: 90, 280
+  offset: 1, 3
+  index: -1
+shandian_05
+  rotate: true
+  xy: 2, 2
+  size: 69, 201
+  orig: 90, 280
+  offset: 11, 22
+  index: -1

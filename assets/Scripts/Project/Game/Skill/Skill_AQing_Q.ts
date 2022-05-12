@@ -10,6 +10,9 @@ const {ccclass, property} = cc._decorator;
 export default class Skill_AQing_Q extends Skill_Base {
     public collider: cc.PhysicsCollider = null
     
+    @property(cc.Prefab)
+    public effect: cc.Prefab = null
+
     onLoad () {
         this.collider = this.node.getComponent(cc.PhysicsCollider)
 	}
@@ -76,6 +79,14 @@ export default class Skill_AQing_Q extends Skill_Base {
         this.scheduleOnce(()=>{
             item.active = false 
         }, 0.05)
+
+        let effect = cc.instantiate(this.effect)
+        effect.parent = item.parent
+        effect.position = item.position
+        
+        cc.tween(effect).delay(1).call(()=>{
+            effect.destroy()
+        }).start()
     }
     // update (dt) {}
 }

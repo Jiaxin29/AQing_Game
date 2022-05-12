@@ -98,12 +98,7 @@ export default class EnemyBaseNode extends Character {
 
     // 使用技能
     useSkill(dt) {
-        this.isCanAttack = false
-        if (Math.random() > 0.3) {
-            this.useSkill_E()
-        } else {
-            this.useSkill_Q()
-        }
+        
     }
 
     // 使用e技能

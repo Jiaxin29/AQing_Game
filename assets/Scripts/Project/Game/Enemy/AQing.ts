@@ -17,6 +17,9 @@ export default class AQing extends EnemyBaseNode {
     @property(cc.Prefab)
     public bullet: cc.Prefab = null  // 攻击
 
+    public attackIntervalTime: number = 0.12  // 一次攻击完成时间，有两次，前摇后摇
+    public attackIntervalDelayTime: number = 0.2  // 攻击完成后延迟时间
+
     onLoad () {
         super.onLoad()
         this.characterName = 'AQing'
@@ -42,12 +45,24 @@ export default class AQing extends EnemyBaseNode {
 
         GameEvent.emit(GameEventEnum.ATTACK_TO_HERO, this.node, this.aim, this.bullet)
         this.velocity = cc.v2(0, 0)
-        cc.tween(this.hand).to(0.12, {angle: -137 + 30}).to(0.12, {angle: -137 + -30}).delay(0.2).call(()=>{
+
+        cc.Tween.stopAllByTarget(this.hand)
+        cc.tween(this.hand).to(this.attackIntervalTime, {angle: -137 + 30}).to(this.attackIntervalTime, {angle: -137 + -30}).delay(this.attackIntervalDelayTime).call(()=>{
             this.isCanAttack = true
             this.startMove()
         }).start()
     }
     
+    // 使用技能
+    useSkill(dt) {
+        this.isCanAttack = false
+        if (Math.random() > 0.3) {
+            this.useSkill_E()
+        } else {
+            this.useSkill_Q()
+        }
+    }
+
     // 技能1
     useSkill_E() {
         console.log('[AQing] useSkill_E')
