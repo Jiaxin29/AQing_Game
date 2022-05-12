@@ -77,13 +77,5 @@ export default class Skill_AQing_Q extends Skill_Base {
             item.active = false 
         }, 0.05)
     }
-    
-    onBeginContact(contact, selfCollider, otherCollider) {
-        let hero = otherCollider.getComponent(HeroController)
-        if (otherCollider == hero.characterCollider) {
-            hero.hurt()
-            this.collider.enabled = false
-        }
-    }
     // update (dt) {}
 }

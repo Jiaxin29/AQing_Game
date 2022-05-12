@@ -47,3 +47,10 @@ export function DegreesToVectors(degree: number): cc.Vec2 {
     
     return dirVec
 }
+
+/*
+    * 获得start到aim的世界方向单位向量
+*/
+export function GetWorldDir(start: cc.Node, aim: cc.Node) {
+    return aim.parent.convertToWorldSpaceAR(aim.position).sub(start.parent.convertToWorldSpaceAR(start.position)).normalize()
+}

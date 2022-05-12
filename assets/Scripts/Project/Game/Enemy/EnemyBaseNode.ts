@@ -27,8 +27,8 @@ export default class EnemyBaseNode extends Character {
     
     onBeginContact(contact, selfCollider, otherCollider) {
         // 被玩家打到
-        if (selfCollider instanceof cc.PhysicsBoxCollider && otherCollider.node.group == GroupEnum.Hero_Bullet) {
-            this.currentLife--
+        if (selfCollider == this.characterCollider && otherCollider.node.group == GroupEnum.Hero_Bullet) {
+            this.hurt()
             GameEvent.emit(GameEventEnum.ATTACK_TO_ENEMY_SUCCESS, this.node)
             otherCollider.node.destroy()
             contact.disabled = true
@@ -36,6 +36,9 @@ export default class EnemyBaseNode extends Character {
         }
     }
 
+    hurt() {
+        this.currentLife--
+    }
     // onEndContact(contact, selfCollider, otherCollider) {
         
     // }
@@ -49,39 +52,20 @@ export default class EnemyBaseNode extends Character {
         this.velocity.x = dir.x
         this.velocity.y = dir.y
 
-        this.moveSpeed = 100
+        this.moveSpeed = this.maxMoveSpeed
         this.rigidbody.linearVelocity = this.velocity.mul(this.moveSpeed)
         // this.node.angle = VectorsToDegrees(this.velocity)
         this.node.scaleX = this.velocity.x >= 0 ? 1 : -1
     }
 
-    // 攻击目标
-    attackAim(dt) {
-        if (!this.isCanAttack) {
-            return
-        }
-
-        this.isCanAttack = false
-        this.stopMove()
-        let dir = this.velocity.x > 0 ? cc.v3(1, 0) : cc.v3(-1, 0)
-        if (this.aim) {
-            let aimWPos = this.aim.parent.convertToWorldSpaceAR(this.aim.position)
-            dir = aimWPos.sub(this.node.parent.convertToWorldSpaceAR(this.node.position)).normalize()
-        }
-
-        // GameEvent.emit(GameEventEnum.ATTACK_TO_ENEMY, this.node.parent.convertToWorldSpaceAR(this.node.position), dir)
-        this.velocity = cc.v2(0, 0)
-        cc.tween(this.hand).by(0.1, {angle: 30}).by(0.1, {angle: -30}).call(()=>{
-            this.isCanAttack = true
-        }).start()
-    }
-
+    // 停止移动
     stopMove() {
         this.moveSpeed = 0
         this.rigidbody.linearVelocity = cc.Vec2.ZERO
     }
 
-    checkAttackType(dt) {
+    // 检测状态
+    checkState(dt) {
         if (!this.aim) {
             return
         }
@@ -101,34 +85,40 @@ export default class EnemyBaseNode extends Character {
     }
 
     update (dt) {
-        this.checkAttackType(dt)
+        this.checkState(dt)
     } 
+
+    // 攻击目标
+    attackAim(dt) {
+
+    }
 
     // 使用技能
     useSkill(dt) {
         this.isCanAttack = false
-        this.useSkill_Q()
-        return
-        
-        if (Math.random() > 0.2) {
+        if (Math.random() > 0.3) {
             this.useSkill_E()
         } else {
             this.useSkill_Q()
         }
     }
 
+    // 使用e技能
     useSkill_E() {
 
     }
 
+    // e技能结束
     useSkill_E_End() {
 
     }
 
+    // 使用q技能
     useSkill_Q() {
 
     }
 
+    // q技能结束
     useSkill_Q_End() {
 
     } 

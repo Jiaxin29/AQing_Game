@@ -3,6 +3,7 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class Character extends cc.Component {
+    public maxMoveSpeed: number = 100
     public moveSpeed: number = 100  // 移动速度
     public velocity: cc.Vec2 = cc.v2(0, 0)  // 移动方向(速度)
     public currentLife: number = 20  // 当前生命

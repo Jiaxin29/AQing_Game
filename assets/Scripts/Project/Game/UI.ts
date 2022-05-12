@@ -7,14 +7,16 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class UI extends cc.Component {
     // 敌人
+    public bossData: cc.Node = null
     public bossName: cc.Node = null
     public bossLife: cc.Node = null
     
     private curretShowNode: cc.Node = null
 
     onLoad () {
-        this.bossName = this.node.getChildByName('boss').getChildByName('bossName')
-        this.bossLife = this.node.getChildByName('boss').getChildByName('bossLife')
+        this.bossData = this.node.getChildByName('bossData')
+        this.bossName = this.bossData.getChildByName('bossName')
+        this.bossLife = this.bossData.getChildByName('bossLife')
 
         GameEvent.on(GameEventEnum.SHOW_ENEMY_DATA, this.onShowBossData, this)
         GameEvent.on(GameEventEnum.ATTACK_TO_ENEMY_SUCCESS, this.onRefreshEnemyData, this)
@@ -39,7 +41,7 @@ export default class UI extends cc.Component {
         this.bossLife.active = true
         this.bossLife.getComponent(cc.ProgressBar).progress = enemy.getComponent(Character).currentLife / enemy.getComponent(Character).life
 
-        this.node.children.forEach(node => {
+        this.bossData.children.forEach(node => {
             node.opacity = 0
             cc.tween(node).to(0.12, {opacity: 255}).start()
         })

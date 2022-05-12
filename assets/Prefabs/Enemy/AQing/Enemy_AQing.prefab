@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "EnemyAmber",
+    "_name": "Enemy_AQing",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -68,7 +68,7 @@
       "ctor": "Float64Array",
       "array": [
         0,
-        544.483,
+        0,
         0,
         0,
         0,
@@ -358,24 +358,6 @@
     "_id": ""
   },
   {
-    "__type__": "0ef6bjul/VGh6lF414rjAwD",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 1
-    },
-    "_enabled": true,
-    "life": 20,
-    "enemyName": "Amber",
-    "xiezi": {
-      "__uuid__": "47757228-9fd0-4539-8ef2-15edeea207a6"
-    },
-    "xingti": {
-      "__uuid__": "e9edf049-7797-4d79-a92a-f4a17a6303b0"
-    },
-    "_id": ""
-  },
-  {
     "__type__": "40fc9rAl35EoqisGXJU3LOb",
     "_name": "",
     "_objFlags": 0,
@@ -405,6 +387,25 @@
       "y": 0
     },
     "_radius": 407,
+    "_id": ""
+  },
+  {
+    "__type__": "4e4c2INpHdBjbJ/spy3TQgI",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "skill_E": {
+      "__uuid__": "47757228-9fd0-4539-8ef2-15edeea207a6"
+    },
+    "skill_Q": {
+      "__uuid__": "e9edf049-7797-4d79-a92a-f4a17a6303b0"
+    },
+    "bullet": {
+      "__uuid__": "d4697318-699c-4446-9245-d3984ee9deaf"
+    },
     "_id": ""
   },
   {
