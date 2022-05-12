@@ -4159,7 +4159,9 @@
       "__id__": 94
     },
     "_enabled": true,
-    "refreshEnemy": null,
+    "refreshEnemy": {
+      "__uuid__": "687af333-dc9b-4fa4-9756-10d875194772"
+    },
     "_id": "abMaeW8hNIcLMl27W6Kq6I"
   },
   {

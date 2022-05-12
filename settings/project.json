@@ -54,7 +54,6 @@
     "EditBox",
     "NodePool",
     "Native Socket",
-    "Physics",
     "PageView",
     "PageViewIndicator",
     "RichText",
@@ -93,7 +92,7 @@
     "height": 640,
     "width": 960
   },
-  "last-module-event-record-time": 1649402213726,
+  "last-module-event-record-time": 1652353384718,
   "assets-sort-type": "name",
   "facebook": {
     "appID": "",
@@ -105,6 +104,5 @@
       "enable": false
     }
   },
-  "migrate-history": [],
-  "start-scene": "current"
+  "migrate-history": []
 }
